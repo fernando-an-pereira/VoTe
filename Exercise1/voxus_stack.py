@@ -13,23 +13,27 @@ class VoxusStack(object):
         self.min_stack = []
 
     def push(self, val):
-        '''Add val to the end of the queue'''
+        '''Add val to the end of the stack'''
 
         self.main_stack.append(val)
         if not self.min_stack or val <= self.min_stack[-1]:
             self.min_stack.append(val)
 
     def pop(self):
-        '''Remove and return the last element of the queue'''
+        '''Remove and return the last element of the stack'''
 
-        val = self.main_stack.pop()
-        if val == self.min_stack[-1]:
-            self.min_stack.pop()
-        return val
+        try:
+            val = self.main_stack.pop()
+            if val == self.min_stack[-1]:
+                self.min_stack.pop()
+            return val
+        except IndexError:
+            raise Exception("Trying to pop from empty stack")
 
     def min(self):
-        '''Return the smallest item in the queue'''
+        '''Return the smallest item in the stack'''
 
         if self.min_stack:
             return self.min_stack[-1]
-        return None
+        
+        raise Exception("Trying to return min value from empty stack")
