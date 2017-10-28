@@ -22,7 +22,7 @@ The code is written in [Python](https://www.python.org/) and it's fully compatil
 
 This project is composed of just two python files, [voxus_stack.py](voxus_stack.py), containing the implementation of the stack class that solves the challenge, and [test_voxus_stack.py](test_voxus_stack.py), used for testing purposes.
 
-The solution uses the built-in **List** data structure. It's important to note that the implemetation of the methods *get item*, *append* and *pop* (when a index is not specified) run all in O(1), according to [this article](https://wiki.python.org/moin/TimeComplexity).
+The solution uses the built-in **List** data structure. It's important to note that the implemetation of the methods *get item*, *append*, *pop* (when a index is not specified), as the emptiness verification (since it's a particular case of *get length* method with a comparison) run all in O(1), according to [this article](https://wiki.python.org/moin/TimeComplexity).
 
 ### VoxusStack Class
 
